@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Comments</title>
+    <style>
+        b,p{
+            margin: 0%;
+        }
+    </style>
+</head>
+<body> 
+    <h1>All Comments</h1>
+    <% for(let com of data){ %> 
+        <b><%= com.username %> </b>
+        <p><%= com.comment %>    <a href="/comments/<%= com.id%> ">   -details</a></p>
+        <hr>
+    <% } %>
+    <h2>Add comment</h2>
+    <form action="/comments" method="post">
+        <label for="username">User Name:</label>
+        <input type="text" name="username" id="uname"><br>
+        <label for="comment" style="text-align: center;">Comment:</label><br>
+        <textarea name="comment" id="comment"cols="30" rows="5"></textarea>
+        <button>add comment</button>
+    </form>
+</body>
+</html>
